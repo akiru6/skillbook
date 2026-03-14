@@ -1,5 +1,5 @@
 {
-  "name": "skillbooks-remix",
+  "name": "skillsbook-remix",
   "main": "./workers/app.ts",
   "compatibility_date": "2026-03-12",
   "compatibility_flags": ["nodejs_compat"],
