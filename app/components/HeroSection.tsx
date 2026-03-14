@@ -274,14 +274,17 @@ export default function HeroSection() {
             </div>
 
             <div className="mt-auto pt-10 flex items-center gap-4">
-              <a href="#" className="border-brutalist shadow-brutalist bg-primary text-primary-foreground px-4 py-2.5 font-mono text-sm font-bold flex items-center gap-2 hover:-translate-y-0.5 transition-transform">
-                <span>⚡</span>
-                <span>skillbooks/awesome-accounting</span>
+              <a 
+                href="https://github.com/akiru6/accounting-skills" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden border-brutalist shadow-brutalist bg-primary text-primary-foreground px-5 py-3 font-mono text-sm font-bold flex items-center gap-2.5 hover:-translate-y-1 hover:shadow-brutalist-lg transition-all"
+              >
+                {/* 悬停时的光泽扫过特效 */}
+                <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1s_forwards] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+                <Github className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="tracking-wide">akiru6/accounting-skills</span>
               </a>
-              <div className="flex items-center gap-1.5 font-mono text-sm text-muted-foreground">
-                <Star className="w-4 h-4 fill-highlight text-highlight" />
-                <span className="font-bold">86</span>
-              </div>
             </div>
           </div>
 

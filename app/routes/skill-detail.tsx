@@ -4,6 +4,7 @@ import remarkFrontmatter from "remark-frontmatter";
 import { Download, Github } from "lucide-react";
 import { Link, useLoaderData, useSearchParams, type LoaderFunctionArgs } from "react-router";
 import { getSkillMarkdown } from "@/data/skills.server";
+import { skillsEN, skillsZH } from "@/data/skillsList";
 import { getTranslations, type Language } from "@/i18n";
 
 export async function loader({ request, params }: LoaderFunctionArgs) {
@@ -23,10 +24,14 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
         throw new Response("Skill not found", { status: 404 });
     }
 
+    const skillsList = lang === "zh" ? skillsZH : skillsEN;
+    const matchedSkill = skillsList.find((s) => s.id === skillId);
+    const skillTitle = matchedSkill ? matchedSkill.title : skillId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
     // 构造 GitHub 下载链接
     const githubUrl = `https://github.com/akiru6/accounting-skills/tree/main/${skillId}`;
 
-    return { skillId, markdown, githubUrl, lang };
+    return { skillId, markdown, githubUrl, lang, skillTitle };
 }
 
 export function meta({ data }: any) {
@@ -40,7 +45,7 @@ export function meta({ data }: any) {
 
 export default function SkillDetail() {
     const loaderData = useLoaderData<typeof loader>();
-    const { skillId, markdown, githubUrl } = loaderData as { skillId: string, markdown: string, githubUrl: string, lang: string };
+    const { skillId, markdown, githubUrl, skillTitle } = loaderData;
 
     const [searchParams] = useSearchParams();
     const lang = (searchParams.get("lang") === "en" ? "en" : "zh") as Language;
@@ -79,8 +84,8 @@ export default function SkillDetail() {
                                 <span className="inline-block w-8 h-[2px] bg-highlight"></span>
                                 {t.playbookPrefix} / {skillId}
                             </p>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4">
-                                {skillId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-4">
+                                {skillTitle}
                             </h1>
                             <p className="font-mono text-sm text-foreground/80 font-bold bg-muted inline-block px-3 py-1 border-[2px] border-border">
                                 {t.authorPrefix} @akiru6 · {t.communityEdition}
@@ -112,7 +117,7 @@ export default function SkillDetail() {
 
                 {/* Markdown 内容主体。使用 Tailwind Typography (prose) 进行极客排版 */}
                 <div className="p-8 md:p-12 bg-background min-h-[50vh]">
-                    <article className="prose prose-stone prose-h1:text-3xl prose-h1:font-black prose-h2:text-2xl prose-h2:font-bold prose-h2:border-b-[3px] prose-h2:border-border prose-h2:pb-2 prose-h3:text-xl prose-h3:font-bold prose-a:text-highlight prose-a:font-bold prose-a:underline prose-a:decoration-2 hover:prose-a:bg-highlight hover:prose-a:text-highlight-foreground 
+                    <article className="prose prose-stone prose-h1:hidden prose-h2:text-2xl prose-h2:font-bold prose-h2:border-b-[3px] prose-h2:border-border prose-h2:pb-2 prose-h3:text-xl prose-h3:font-bold prose-a:text-highlight prose-a:font-bold prose-a:underline prose-a:decoration-2 hover:prose-a:bg-highlight hover:prose-a:text-highlight-foreground 
                     
                     prose-code:text-accent prose-code:bg-muted/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-code:font-bold
                     

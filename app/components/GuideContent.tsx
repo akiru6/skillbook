@@ -3,7 +3,7 @@ import { ArrowLeft, MousePointerClick, FileCode, Terminal, BookMarked, Layers, C
 import { motion, AnimatePresence } from "framer-motion";
 import { getTranslations, type Language } from "@/i18n";
 
-type ToolId = "antigravity" | "claude";
+type ToolId = "antigravity" | "claude" | "openclaw";
 type PeekTarget = "SKILL.md" | "scripts/" | "references/" | "assets/" | null;
 
 const peekVariants = {
@@ -184,15 +184,14 @@ export default function GuideContent({ lang }: { lang?: Language }) {
             </button>
             {toolDropdownOpen && (
               <div className="absolute top-full left-0 mt-1 z-30 border-[2px] border-foreground/30 bg-card shadow-[3px_3px_0px_hsl(var(--border))] min-w-[140px]">
-                {(["antigravity", "claude"] as ToolId[]).map((tool) => (
+                {(["antigravity", "claude", "openclaw"] as ToolId[]).map((tool) => (
                   <button
                     key={tool}
                     onClick={() => { setActiveTool(tool); setToolDropdownOpen(false); }}
-                    className={`w-full text-left px-3 py-1.5 font-mono text-[11px] font-bold transition-colors ${
-                      activeTool === tool
+                    className={`w-full text-left px-3 py-1.5 font-mono text-[11px] font-bold transition-colors ${activeTool === tool
                         ? 'bg-highlight text-accent-foreground'
                         : 'hover:bg-secondary'
-                    }`}
+                      }`}
                   >
                     {t.toolTabs[tool]}
                   </button>
@@ -208,8 +207,8 @@ export default function GuideContent({ lang }: { lang?: Language }) {
           {/* Level 1: your-project/ */}
           <div className="flex items-center gap-1.5 py-1 pl-0.5">
             <span className="text-foreground/40 shrink-0 text-xs">📁</span>
-            <span className="font-bold text-foreground/55">your-project/</span>
-            <span className="text-muted-foreground/45 text-[10px] ml-auto hidden sm:inline">── {t.pathHints.projectRoot}</span>
+            <span className="font-bold text-foreground/55">{t.rootLabels[activeTool]}</span>
+            <span className="text-muted-foreground/45 text-[10px] ml-auto hidden sm:inline">── {t.rootHints[activeTool]}</span>
           </div>
 
           {/* Level 2: .agents/skills/ — with L-branch from level 1 */}

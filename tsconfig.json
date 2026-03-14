@@ -12,6 +12,7 @@
       "ES2022"
     ],
     "types": [
+      "@cloudflare/workers-types",
       "node",
       "vite/client"
     ],

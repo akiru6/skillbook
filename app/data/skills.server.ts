@@ -1,31 +1,36 @@
-import fs from "fs/promises";
-import path from "path";
+import React from "react";
 
 /**
- * 这是专门在服务器端运行的数据获取文件
- * 这里我们从本地文件系统读取 SKILL.md，
- * 未来如果有了数据库，就改成从数据库或 GitHub API 读取。
+ * 这是一个服务端渲染的数据获取函数。
+ * 当此网站部署在云端（如 Cloudflare, Vercel）时，它不再拥有你本地的那些文件夹结构。
+ * 因此，我们将本地的 fs 读取修改为了直接从你的 GitHub 仓库实时拉取最新的技能元数据。
  */
 
-// 假设我们现在从上两层目录（workspace根目录）读取对应名称的文件夹
-const WORKSPACE_DIR = path.resolve(process.cwd(), "..");
-
 export async function getSkillMarkdown(skillId: string, lang: string = "zh"): Promise<string | null> {
+    const rawBaseUrl = "https://raw.githubusercontent.com/akiru6/accounting-skills/main";
+    
     try {
-        let filePath = path.join(WORKSPACE_DIR, skillId, `SKILL_${lang}.md`);
+        // Build the URL for the specific language, or default to SKILL.md for zh
+        const fileName = lang === 'en' ? 'SKILL_en.md' : 'SKILL.md';
+        let url = `${rawBaseUrl}/${skillId}/${fileName}`;
         
-        // If the specific language version doesn't exist (or we're asking for zh which is just SKILL.md by default)
-        // we'll try to fallback to the default SKILL.md
-        try {
-            await fs.access(filePath);
-        } catch {
-            filePath = path.join(WORKSPACE_DIR, skillId, "SKILL.md");
+        let response = await fetch(url);
+
+        // Fallback: If not found, try the universal SKILL.md
+        if (!response.ok && fileName !== 'SKILL.md') {
+            url = `${rawBaseUrl}/${skillId}/SKILL.md`;
+            response = await fetch(url);
         }
 
-        const content = await fs.readFile(filePath, "utf-8");
+        if (!response.ok) {
+            console.warn(`Failed to fetch markdown for ${skillId} from GitHub. Expected 200 OK, got ${response.status}`);
+            return null;
+        }
+
+        const content = await response.text();
         return content;
     } catch (error) {
-        console.error(`Error reading markdown for skill ${skillId}:`, error);
+        console.error(`Error requesting markdown for skill ${skillId}:`, error);
         return null;
     }
 }

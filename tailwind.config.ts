@@ -122,6 +122,9 @@ export default {
                     "90%": { opacity: "0.7" },
                     "100%": { transform: "translateY(60px)", opacity: "0" },
                 },
+                "shimmer": {
+                    "100%": { transform: "translateX(100%)" },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
@@ -134,6 +137,7 @@ export default {
                 "spin-slow-reverse": "spin-slow-reverse 6s linear infinite",
                 "receipt-print": "receipt-print 4s ease-in-out infinite",
                 "scan-bar": "scan-bar 3s ease-in-out infinite",
+                "shimmer": "shimmer 1s forwards",
             },
         },
     },

@@ -40,10 +40,22 @@ export const translations = {
             toolTabs: {
                 antigravity: "Antigravity",
                 claude: "Claude",
+                openclaw: "OpenClaw",
+            },
+            rootLabels: {
+                antigravity: "your-project/",
+                claude: "your-project/",
+                openclaw: "openclaw/",
+            },
+            rootHints: {
+                antigravity: "Your project root",
+                claude: "Your project root",
+                openclaw: "OpenClaw home directory",
             },
             directoryPaths: {
                 antigravity: ".agents/skills/my-skill/",
                 claude: ".claude/skills/my-skill/",
+                openclaw: "skills/my-skill/",
             },
             pathHints: {
                 projectRoot: "Your project root",
@@ -53,6 +65,7 @@ export const translations = {
             titleBarPaths: {
                 antigravity: ".agents/skills/",
                 claude: ".claude/skills/",
+                openclaw: "skills/",
             },
             peek: {
                 skillMd: {
@@ -188,10 +201,22 @@ export const translations = {
             toolTabs: {
                 antigravity: "Antigravity",
                 claude: "Claude",
+                openclaw: "OpenClaw",
+            },
+            rootLabels: {
+                antigravity: "your-project/",
+                claude: "your-project/",
+                openclaw: "openclaw/",
+            },
+            rootHints: {
+                antigravity: "你的项目根目录",
+                claude: "你的项目根目录",
+                openclaw: "OpenClaw 主目录",
             },
             directoryPaths: {
                 antigravity: ".agents/skills/my-skill/",
                 claude: ".claude/skills/my-skill/",
+                openclaw: "skills/my-skill/",
             },
             pathHints: {
                 projectRoot: "你的项目根目录",
@@ -201,6 +226,7 @@ export const translations = {
             titleBarPaths: {
                 antigravity: ".agents/skills/",
                 claude: ".claude/skills/",
+                openclaw: "skills/",
             },
             peek: {
                 skillMd: {

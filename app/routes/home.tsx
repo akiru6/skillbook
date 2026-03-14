@@ -17,6 +17,7 @@ import type { Route } from "./+types/home";
 import { Outlet, useSearchParams } from "react-router";
 import HeroSection from "@/components/HeroSection";
 import SkillsSection from "@/components/SkillsSection";
+import { skillsEN, skillsZH } from "@/data/skillsList";
 
 /**
  * 🎓 meta() — SEO 元数据
@@ -58,114 +59,6 @@ export function meta({ }: Route.MetaArgs) {
 export async function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
   const lang = url.searchParams.get("lang") === "en" ? "en" : "zh";
-
-  const skillsEN = [
-    {
-      id: "invoice-extraction",
-      chapter: "01",
-      title: "Invoice Extraction",
-      subtitle: "Data Extractor",
-      description: "Extract structured JSON data (dates, amounts, items) from various invoice formats accurately.",
-      author: "@akiru6",
-      category: "INVOICING",
-      page: "012",
-      status: "active" as const,
-    },
-    {
-      id: "invoice-posting",
-      chapter: "02",
-      title: "Invoice Posting",
-      subtitle: "Entry Automation",
-      description: "Automatically generate and post double-entry accounting journal entries based on extracted invoice data.",
-      author: "@akiru6",
-      category: "EXPENSES",
-      page: "024",
-      status: "active" as const,
-    },
-    {
-      id: "tax-estimator",
-      chapter: "03",
-      title: "Quarterly Tax Estimator",
-      subtitle: "Tax Compliance",
-      description: "Automatically calculate quarterly estimated tax payments based on income and expenses.",
-      author: "@akiru6",
-      category: "TAX",
-      page: "---",
-      status: "planned" as const,
-    },
-    {
-      id: "bank-reconciliation",
-      chapter: "04",
-      title: "Bank Reconciliation",
-      subtitle: "Audit Assistant",
-      description: "Match bank transactions with ledgers automatically to speed up monthly close.",
-      author: "@akiru6",
-      category: "BANKING",
-      page: "---",
-      status: "planned" as const,
-    },
-    {
-      id: "pl-report",
-      chapter: "05",
-      title: "P&L Report Generator",
-      subtitle: "Visual Analytics",
-      description: "Generate 1-click Profit & Loss statements filtering by month, quarter, or year.",
-      author: "@akiru6",
-      category: "REPORTING",
-      page: "---",
-      status: "planned" as const,
-    },
-    {
-      id: "contract-reviewer",
-      chapter: "06",
-      title: "Contract Reviewer",
-      subtitle: "Legal Assistant",
-      description: "Auto-review financial clauses in contracts and highlight potential compliance risks.",
-      author: "Community",
-      category: "CONTRACTS",
-      page: "---",
-      status: "planned" as const,
-    },
-  ];
-
-  const skillsZH = [
-    {
-      id: "invoice-extraction", chapter: "01",
-      title: "提取结构化发票", subtitle: "数据提取器",
-      description: "从各种格式的发票中精准提取结构化 JSON 数据（日期、金额、明细）。",
-      author: "@akiru6", category: "INVOICING", page: "012", status: "active" as const,
-    },
-    {
-      id: "invoice-posting", chapter: "02",
-      title: "自动生成凭证", subtitle: "入账自动化",
-      description: "基于提取的发票数据，自动生成并录入复式记账凭证。",
-      author: "@akiru6", category: "EXPENSES", page: "024", status: "active" as const,
-    },
-    {
-      id: "tax-estimator", chapter: "03",
-      title: "季度预估税款", subtitle: "税务合规",
-      description: "根据收入和支出自动计算并生成季度预估税款报告。",
-      author: "@akiru6", category: "TAX", page: "---", status: "planned" as const,
-    },
-    {
-      id: "bank-reconciliation", chapter: "04",
-      title: "银企对账助手", subtitle: "审计辅助",
-      description: "自动对齐银行流水与本地账本，极大加快月末结账速度。",
-      author: "@akiru6", category: "BANKING", page: "---", status: "planned" as const,
-    },
-    {
-      id: "pl-report", chapter: "05",
-      title: "利润与损失表", subtitle: "可视化分析",
-      description: "一键生成损益表，支持按月、季度或年度自由筛选对比。",
-      author: "@akiru6", category: "REPORTING", page: "---", status: "planned" as const,
-    },
-    {
-      id: "contract-reviewer", chapter: "06",
-      title: "合同审查助手", subtitle: "法务辅助",
-      description: "自动审查合同中的财务条款，并高亮标注潜在合规风险。",
-      author: "Community", category: "CONTRACTS", page: "---", status: "planned" as const,
-    },
-  ];
 
   return { skills: lang === "zh" ? skillsZH : skillsEN };
 }
