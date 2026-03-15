@@ -123,7 +123,7 @@ export const translations = {
             handles: {
                 douyin: "智能之心 Ex-machina",
                 xiaohongshu: "智能之心 Ex-machina",
-                wechatVideo: "智能信心 Mind-Ex-Machina",
+                wechatVideo: "智能之心Mind-Ex-Machina",
                 bilibili: "智能之心 Ex-machina",
             },
         },
@@ -284,7 +284,7 @@ export const translations = {
             handles: {
                 douyin: "智能之心 Ex-machina",
                 xiaohongshu: "智能之心 Ex-machina",
-                wechatVideo: "智能信心 Mind-Ex-Machina",
+                wechatVideo: "智能之心Mind-Ex-Machina",
                 bilibili: "智能之心 Ex-machina",
             },
         },
