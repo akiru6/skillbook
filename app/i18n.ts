@@ -112,7 +112,7 @@ export const translations = {
             description: "Join our community of solopreneurs building accounting automations together.",
             submitSkill: "Submit a Skill",
             email: "Email Us",
-            emailAddress: "hi@skillbook.dev",
+            emailAddress: "glorious.rain@gmail.com",
             socialMedia: "Social Media",
             platforms: {
                 douyin: "Douyin",
@@ -121,10 +121,10 @@ export const translations = {
                 bilibili: "Bilibili",
             },
             handles: {
-                douyin: "@skillbook",
-                xiaohongshu: "@skillbook",
-                wechatVideo: "skillbook",
-                bilibili: "@skillbook",
+                douyin: "智能之心 Ex-machina",
+                xiaohongshu: "智能之心 Ex-machina",
+                wechatVideo: "智能信心 Mind-Ex-Machina",
+                bilibili: "智能之心 Ex-machina",
             },
         },
         skillsIndex: {
@@ -273,7 +273,7 @@ export const translations = {
             description: "加入，与独立创业者一起，共同打造财务自动化生态。",
             submitSkill: "提交技能",
             email: "联系邮箱",
-            emailAddress: "hi@skillbook.dev",
+            emailAddress: "glorious.rain@gmail.com",
             socialMedia: "社交媒体",
             platforms: {
                 douyin: "抖音",
@@ -282,10 +282,10 @@ export const translations = {
                 bilibili: "B站",
             },
             handles: {
-                douyin: "@skillbook",
-                xiaohongshu: "@skillbook",
-                wechatVideo: "skillbook",
-                bilibili: "@skillbook",
+                douyin: "智能之心 Ex-machina",
+                xiaohongshu: "智能之心 Ex-machina",
+                wechatVideo: "智能信心 Mind-Ex-Machina",
+                bilibili: "智能之心 Ex-machina",
             },
         },
         skillsIndex: {
