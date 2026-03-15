@@ -1,19 +1,24 @@
-import { createRequestHandler } from "react-router";
+import { createRequestHandler } from "@react-router/cloudflare";
 
 // @ts-ignore - server build is generated at build time
 import * as build from "../build/server/index.js";
 
-const handler = createRequestHandler(build, "production");
+const handler = createRequestHandler(build);
 
 export const onRequest: PagesFunction = async (context) => {
-  const url = new URL(context.request.url);
+  const { request, next, env } = context;
+  const url = new URL(request.url);
 
-  // Serve static assets from the build/client directory
-  if (url.pathname.startsWith("/assets/") || url.pathname === "/favicon.ico") {
-    return context.next();
+  // If the request is for a static asset, pass it through to the static assets server
+  if (
+    url.pathname.startsWith("/assets/") ||
+    url.pathname === "/favicon.ico" ||
+    url.pathname === "/robots.txt"
+  ) {
+    return next();
   }
 
-  return handler(context.request, {
-    cloudflare: { env: context.env, ctx: context },
+  return handler(request, {
+    cloudflare: { env, ctx: context },
   });
 };
