@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build && cp -r build/server/* build/client/ && mv build/client/index.js build/client/_worker.js && rm -f build/client/wrangler.json",
+    "build": "react-router build",
     "dev": "react-router dev",
     "start": "wrangler dev",
     "deploy": "npm run build && wrangler deploy",
