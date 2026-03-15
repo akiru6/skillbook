@@ -30,7 +30,7 @@ import { skillsEN, skillsZH } from "@/data/skillsList";
  */
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "SkillBooks — The Ultimate Accounting Skills Playbook" },
+    { title: "SkillBook — The Ultimate Accounting Skills Playbook" },
     {
       name: "description",
       content:
@@ -84,7 +84,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <footer className="border-t-[2.5px] border-border px-6 py-8 max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-mono text-sm text-muted-foreground">
-            {lang === "zh" ? "© 2026 SkillBooks · 财税技能完全手册" : "© 2026 SkillBooks · Accounting Skills Playbook"}
+            {lang === "zh" ? "© 2026 SkillBook · 财税技能完全手册" : "© 2026 SkillBook · Accounting Skills Playbook"}
           </p>
           <div className="flex gap-6">
             <a
@@ -94,7 +94,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
               GitHub
             </a>
             <a
-              href="mailto:hi@skillbooks.dev"
+              href="mailto:hi@skillbook.dev"
               className="font-mono text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Email

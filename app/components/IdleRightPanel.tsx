@@ -100,7 +100,7 @@ function StreamingTerminal() {
 
         {/* Status bar */}
         <div className="border-t-[3px] border-foreground/80 px-4 py-1.5 bg-[hsl(0,0%,8%)] flex items-center justify-between font-mono text-[10px] text-white/30">
-          <span>⚡ skillbooks/awesome-accounting</span>
+          <span>⚡ skillbook/awesome-accounting</span>
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             LIVE

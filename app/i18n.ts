@@ -112,7 +112,7 @@ export const translations = {
             description: "Join our community of solopreneurs building accounting automations together.",
             submitSkill: "Submit a Skill",
             email: "Email Us",
-            emailAddress: "hi@skillbooks.dev",
+            emailAddress: "hi@skillbook.dev",
             socialMedia: "Social Media",
             platforms: {
                 douyin: "Douyin",
@@ -121,10 +121,10 @@ export const translations = {
                 bilibili: "Bilibili",
             },
             handles: {
-                douyin: "@skillbooks",
-                xiaohongshu: "@skillbooks",
-                wechatVideo: "skillbooks",
-                bilibili: "@skillbooks",
+                douyin: "@skillbook",
+                xiaohongshu: "@skillbook",
+                wechatVideo: "skillbook",
+                bilibili: "@skillbook",
             },
         },
         skillsIndex: {
@@ -158,7 +158,7 @@ export const translations = {
             communityEdition: "Community Edition",
             downloadZip: "DOWNLOAD (.ZIP)",
             viewOnGithub: "VIEW ON GITHUB",
-            footerCopyright: "© 2026 SkillBooks Playground.",
+            footerCopyright: "© 2026 SkillBook Playground.",
             footerOpenSource: "Open Source with ❤️"
         }
     },
@@ -273,7 +273,7 @@ export const translations = {
             description: "加入，与独立创业者一起，共同打造财务自动化生态。",
             submitSkill: "提交技能",
             email: "联系邮箱",
-            emailAddress: "hi@skillbooks.dev",
+            emailAddress: "hi@skillbook.dev",
             socialMedia: "社交媒体",
             platforms: {
                 douyin: "抖音",
@@ -282,10 +282,10 @@ export const translations = {
                 bilibili: "B站",
             },
             handles: {
-                douyin: "@skillbooks",
-                xiaohongshu: "@skillbooks",
-                wechatVideo: "skillbooks",
-                bilibili: "@skillbooks",
+                douyin: "@skillbook",
+                xiaohongshu: "@skillbook",
+                wechatVideo: "skillbook",
+                bilibili: "@skillbook",
             },
         },
         skillsIndex: {
@@ -319,7 +319,7 @@ export const translations = {
             communityEdition: "社区版",
             downloadZip: "下载 (.ZIP) 包",
             viewOnGithub: "在 GITHUB 仓库查看",
-            footerCopyright: "© 2026 SkillBooks Playground.",
+            footerCopyright: "© 2026 SkillBook Playground.",
             footerOpenSource: "开源驱动 ❤️"
         }
     }

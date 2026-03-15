@@ -38,7 +38,7 @@ export function meta({ data }: any) {
     const lang = data?.lang || "zh";
     const t = getTranslations(lang).skillDetail;
     return [
-        { title: `${t.metaTitlePrefix} ${data?.skillId || ''} — SkillBooks` },
+        { title: `${t.metaTitlePrefix} ${data?.skillId || ''} — SkillBook` },
         { name: "description", content: t.metaDescription },
     ];
 }
