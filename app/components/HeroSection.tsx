@@ -268,7 +268,10 @@ export default function HeroSection() {
               >
                 {t.browseSkills} <ArrowRight className="w-4 h-4" />
               </a>
-              <button className="border-brutalist shadow-brutalist bg-card px-6 py-3 font-mono text-sm font-bold hover:-translate-y-0.5 transition-transform">
+              <button 
+                onClick={() => handleTabClick("guide")}
+                className="border-brutalist shadow-brutalist bg-card px-6 py-3 font-mono text-sm font-bold hover:-translate-y-0.5 transition-transform"
+              >
                 {t.whatIsSkill}
               </button>
             </div>
