@@ -257,11 +257,11 @@ export default function HeroSection() {
               </h1>
             )}
 
-            <p className={`${lang === 'zh' ? 'mt-10 md:mt-9' : 'mt-8'} text-muted-foreground text-lg leading-relaxed max-w-md transition-all`}>
+            <p className={`${lang === 'zh' ? 'mt-10 md:mt-9' : 'mt-8'} text-muted-foreground text-base md:text-lg leading-relaxed max-w-md transition-all`}>
               {t.description}
             </p>
 
-            <div className={`flex flex-wrap gap-3 ${lang === 'zh' ? 'mt-9' : 'mt-8'} transition-all`}>
+            <div className={`flex flex-wrap gap-3 ${lang === 'zh' ? 'mt-7 md:mt-9' : 'mt-6 md:mt-8'} transition-all`}>
               <a
                 href="#skills"
                 className="border-brutalist shadow-brutalist bg-highlight text-accent-foreground px-6 py-3 font-mono text-sm font-bold flex items-center gap-2 hover:-translate-y-0.5 transition-transform"
@@ -276,7 +276,7 @@ export default function HeroSection() {
               </button>
             </div>
 
-            <div className="mt-auto pt-10 flex items-center gap-4">
+            <div className={`mt-auto ${lang === 'zh' ? 'pt-6 md:pt-10' : 'pt-5 md:pt-10'} flex items-center gap-4`}>
               <a 
                 href="https://github.com/akiru6/accounting-skills" 
                 target="_blank"
