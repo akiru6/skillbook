@@ -1,0 +1,7 @@
+# robots.txt – RFC 9309
+# https://www.rfc-editor.org/rfc/rfc9309
+
+# Allow all crawlers (including AI engines) for maximum discoverability
+User-agent: *
+Allow: /
+Disallow: /api/
