@@ -6,7 +6,7 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "wrangler dev",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build && wrangler pages deploy ./build/client",
     "cf-typegen": "wrangler types --env-interface CloudflareEnvironment",
     "typecheck": "react-router typegen && tsc"
   },
