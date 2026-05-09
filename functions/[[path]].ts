@@ -9,7 +9,12 @@ export const onRequest: PagesFunction = async (context) => {
   const url = new URL(context.request.url);
 
   // Serve static assets from the build/client directory
-  if (url.pathname.startsWith("/assets/") || url.pathname === "/favicon.ico" || url.pathname === "/robots.txt") {
+  if (
+    url.pathname.startsWith("/assets/") || 
+    url.pathname === "/favicon.ico" || 
+    url.pathname === "/robots.txt" ||
+    url.pathname.endsWith(".html")
+  ) {
     return context.next();
   }
 
